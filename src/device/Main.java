@@ -3,8 +3,8 @@ package device;
 import domain.Device;
 import xml.DeviceXmlReader;
 import xml.DeviceXmlValidator;
+import сomparator.SortByPrice;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
@@ -16,6 +16,7 @@ public class Main {
         if (validator.validate()) {
             DeviceXmlReader reader = new DeviceXmlReader();
             List<Device> devices = reader.read("devices.xml");
+            devices.sort(new SortByPrice());
             for (Device device : devices) {
                 System.out.println(device);
             }
