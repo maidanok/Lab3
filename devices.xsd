@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.22.org/devices"
+        xmlns:tns="http://www.22.org/devices" elementFormDefault="qualified">
+    <element name="devices">
+        <complexType>
+            <sequence>
+                <element name="device" maxOccurs="unbounded">
+                    <complexType>
+                        <sequence>
+                            <element name="name" type="string"/>
+                            <element name="origin" type="string"/>
+                            <element name="price">
+                                <simpleType>
+                                    <restriction base="int">
+                                        <minInclusive value="0"/>
+                                        <maxExclusive value="10000"/>
+                                    </restriction>
+                                </simpleType>
+                            </element>
+                            <element name="iscritical" type="boolean"/>
+                            <element name="type_device">
+                                <complexType>
+                                    <sequence>
+                                        <element name="port">
+                                            <simpleType>
+                                                <restriction base="string">
+                                                    <enumeration value="Usb"/>
+                                                    <enumeration value="PciEx"/>
+                                                    <enumeration value="Ddr"/>
+                                                    <enumeration value="Vga"/>
+                                                    <enumeration value="Lga1151"/>
+                                                </restriction>
+                                            </simpleType>
+                                        </element>
+                                        <element name="function_type">
+                                            <simpleType>
+                                                <restriction base="string">
+                                                    <enumeration value="Monitor"/>
+                                                    <enumeration value="VideoCard"/>
+                                                    <enumeration value="Motherboard"/>
+                                                    <enumeration value="Keyboard"/>
+                                                    <enumeration value="Mouse"/>
+                                                    <enumeration value="HardDisk"/>
+                                                </restriction>
+                                            </simpleType>
+                                        </element>
+                                        <element name="power">
+                                            <simpleType>
+                                                <restriction base="integer">
+                                                    <minInclusive value="0"/>
+                                                    <maxInclusive value="3000"/>
+                                                </restriction>
+                                            </simpleType>
+                                        </element>
+                                        <element name="cooler">
+                                            <simpleType>
+                                                <restriction base="boolean"/>
+                                            </simpleType>
+                                        </element>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                        </sequence>
+                        <attribute name="id" use="required">
+                            <simpleType>
+                                <restriction base="ID">
+                                    <pattern value="[a-zA-z0-9_]+"/>
+                                </restriction>
+                            </simpleType>
+                        </attribute>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

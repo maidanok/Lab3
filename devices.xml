@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<devices xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.22.org/devices" xsi:schemaLocation="http://www.22.org/devices devices.xsd">
+    <device id="LogitechK120">
+        <name>Logitech K120</name>
+        <origin>Китай</origin>
+        <price>143</price>
+        <iscritical>false</iscritical>
+        <type_device>
+            <port>Usb</port>
+            <function_type>Keyboard</function_type>
+            <power>5</power>
+            <cooler>false</cooler>
+        </type_device>
+    </device>
+    <device id="GW2270H">
+        <name>BenQ GW2270H</name>
+        <origin>Тайвань</origin>
+        <price>224</price>
+        <iscritical>false</iscritical>
+        <type_device>
+            <port>Vga</port>
+            <function_type>Monitor</function_type>
+            <power>235</power>
+            <cooler>false</cooler>
+        </type_device>
+    </device>
+    <device id="NE51060S15J9">
+        <name>Palit GeForce GTX 1060 Super JetStream </name>
+        <origin>Корея</origin>
+        <price>565</price>
+        <iscritical>true</iscritical>
+        <type_device>
+            <port>PciEx</port>
+            <function_type>VideoCard</function_type>
+            <power>115</power>
+            <cooler>true</cooler>
+        </type_device>
+    </device>
+</devices>
